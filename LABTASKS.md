@@ -58,6 +58,7 @@ Nav-pills in navbar (makes nice looking navigation buttons) and list-group in in
 >Protip: Bootstrap is awesome. Start using it. Seriously. This allows you to do fancy things with styling (CSS) with very little effort. Think back to lab 1. http://getbootstrap.com/components/ <- Regular Bootstrap. https://angular-ui.github.io/bootstrap/ <- Angular Bootstrap. These offer separate functionality and both can be used simultaneously.
 
 ##### Stop the server by pressing Ctrl-C in the terminal, type "grunt test" to run tests. Where are the tests located?
+The public/javascript/*.spec.js files.
 
 ## Part #2: modifying the project.
 

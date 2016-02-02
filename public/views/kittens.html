@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title> KITTENS! </title>
+
+    <!-- Loading Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.css">
+    <!-- this makes the bootstrap.css visible to WebStorm so that it can provide suggestions for code completion -->
+    <link rel="stylesheet" type="text/css" href="../../bootstrap/dist/css/bootstrap.css">
+
+    <!-- Loading Javascript Stuff -->
+    <script type="text/javascript" src="javascript/clientJavascript.js"></script>
+    <script type="text/javascript" src="angularjs/angular.js"></script>
+
+    <script type="text/javascript" src="javascript/app.js"></script>
+    <script type="text/javascript" src="javascript/main.controller.js"></script>
+    <script type="text/javascript" src="javascript/navbar.controller.js"></script>
+</head>
+
+<body id="kittens-body" ng-app="mainApp" ng-controller="mainCtrl as mainControl">
+
+<header ng-include="'views/navbar.html'"> </header>
+
+<span class="glyphicon glyphicon-pushpin" onclick=""> Fun fact: Kittens are super cute. </span>
+
+<br>
+
+<div id="cute-kittens-video "> <iframe width="560" height="315" src="https://www.youtube.com/embed/4IP_E7efGWE" frameborder="0" allowfullscreen></iframe> </div>
+
+<hr>
+
+<p > Kittens are cute, everyone loves kittens! </p>
+
+<body>
+
+</body>
+</html>
