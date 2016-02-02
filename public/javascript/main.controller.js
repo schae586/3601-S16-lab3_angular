@@ -7,6 +7,7 @@
 
         // Normally, data like this would be stored in a database, and this controller would issue an http:get request for it.
         mainControl.data = [
+            {text: "zebra"},
             {text: "fish"},
             {text: "kittens"},
             {text: "snake"},

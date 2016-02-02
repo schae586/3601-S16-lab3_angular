@@ -13,17 +13,47 @@ questions by editing this file.
 - Observe the HTML element's formatting (it's done via bootstrap). As you are working on the questions below, experiment with the project to get a better sense for what each element is. 
 
 ##### List all the files at the top level of your project (i.e. not in public) and briefly state the purpose of each one, as you understand it. You might want to postpone describing some files until you work with the project a bit more. 
+.gitignore: Specifies what to not commit to git.
+.travis.yml: Travis settings for automated build stuff or whatever.
+app.js: Handles Node.JS stuff for redirecting traffic things.
+bower.json: Bower configuration for angular.
+gruntfile.js: Configuration settings for running grunt/karma/automated tests.
+karma.conf.js: More settings for Karma/automated tests.
+LABTASTKS.md: You're reading it right now, you probably know what it is.
+package.json: More karma and grunt configurations settings! Hooray!
+README.md: Describes the lab setup and such and contains the TRAVIS build status icon thingy.
 
 ##### List the folders in the public folder and describe the purpose for each.
+assets: Has images and stuff.
+css: Holds css files.
+javascript: Holds javascript files for scripty things.
+views: Holds the HTML files available for public view.
+
 ##### What are the names of the Angular controllers in this web application? What does each of them do?
-##### Open the index.html view. What controller(s) is it using? 
-##### Where is the navigation bar included in the source code for index.html? 
+mainCtrl (mainControl) which controls... main stuff?
+navbarCtrl (navbar) which displays the overhead navigation bar.
+
+##### Open the index.html view. What controller(s) is it using?
+Both controllers, the main controller and the navbar controller.
+
+##### Where is the navigation bar included in the source code for index.html?
+In a div indicated by angular as being "included" or automaticaly loaded whenever index.html is.
+
 ##### app.js within public/javascript is where your Angular modules are located at. What modules does the project currently have?
+Standard controllers (whatever that is) and mainApp which requires standardControllers.
+
 ##### Notice, the code controlling the Node.js server is in a file also called app.js. There is no particular reason for this other than a generator we will use later on follows the same convention. Explain the difference between the purpose of the files (think client vs server).
-##### Add a pet to the array, data (in the appropriate controller). See the change on the web page (you need to reload, but not restart). 
+The client receives one to use when loading webpages - the one nested in public, hence... public. The one in the main directory is used server side to handle redirect request stuff.
+
+##### Add a pet to the array, data (in the appropriate controller). See the change on the web page (you need to reload, but not restart).
 ##### How are new items added and deleted through the web page? (i.e. - What functions from the main controller are used in index.html, and what Angular directives allow them to interact with the view?)
-##### Open navbar.html view. What is its purpose? How would you go about adding links to the navigation bar? 
-##### Find two instances of use of bootstrap (see above) in either navbar view or index view or both; explain what is formatted. 
+They're added to an array, and Angular loops through the array to determine what to display. Uses the 'addData' and 'removeData' to add and remove data.
+
+##### Open navbar.html view. What is its purpose? How would you go about adding links to the navigation bar?
+The purpose of this is a predefined header with a navigation bar to display at the top of webpages. To add a link to the navbar, add a entry to navbar.controller.js's list of entries.
+
+##### Find two instances of use of bootstrap (see above) in either navbar view or index view or both; explain what is formatted.
+Nav-pills in navbar (makes nice looking navigation buttons) and list-group in index.html (for list elements for the pets).
 
 >Protip: Bootstrap is awesome. Start using it. Seriously. This allows you to do fancy things with styling (CSS) with very little effort. Think back to lab 1. http://getbootstrap.com/components/ <- Regular Bootstrap. https://angular-ui.github.io/bootstrap/ <- Angular Bootstrap. These offer separate functionality and both can be used simultaneously.
 

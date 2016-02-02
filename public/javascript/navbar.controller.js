@@ -4,6 +4,7 @@ angular.module('mainApp').controller('navbarCtrl', function(){
     console.log("Navbar controller loaded");
 
     navbar.pages = [
+        {text: "Wikipedia", link: 'https://www.wikipedia.org/'},
         {text: "Home", link: '/'},
         {text: "About", link: '/about'},
         {text: "Kittens", link: '/kittens'},
