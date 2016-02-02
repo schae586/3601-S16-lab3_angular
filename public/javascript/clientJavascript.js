@@ -5,7 +5,7 @@
  * Takes no arguments, and creates a javascript alert in the client's browser.
  */
 var sendAlert = function(){
-    alert("THIS IS AN ALERT!");
+    alert("THIS IS A TEST OF THE EMERGENCY BROADCAST SYSTEM");
 };
 
 /**

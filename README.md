@@ -42,7 +42,7 @@ Every time you run your tests, a test coverage report will be generated. This le
 
 #Continuous Integration with Travis (Part 2)
 
-We're bringing back Travis for this lab (and the rest that you will do). This time, Travis will run Grunt whenver is performs a build in order to run your tests.
+We're bringing back Travis for this lab (and the rest that you will do). This time, Travis will run Grunt whenever it performs a build in order to run your tests.
 
 We will have you do a bit more to get Travis set up this time around.
 What you need to do:
