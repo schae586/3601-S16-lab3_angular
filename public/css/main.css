@@ -5,6 +5,19 @@ img {
     margin-right: auto;
 }
 
+#footer {
+    margin: auto;
+    width: 100%;
+    border: 3px solid #73AD21;
+    padding: 10px;
+}
+
+#footer-insides {
+    margin: auto;
+    width: 30%;
+    padding: 10px;
+}
+
 /* Style for the navbar on the home page */
 #navBar {
     margin: 20px 0 20px 0;
