@@ -8,6 +8,7 @@ angular.module('stdComponents').controller('navbarCtrl', function(){
         {text: "Home", link: '/'},
         {text: "About", link: '/about'},
         {text: "Kittens", link: '/kittens'},
-        {text: "404 Page", link: '/wefwrtbertbeb'}
+        {text: "404 Page", link: '/wefwrtbertbeb'},
+        {text: "GPA", link: '/GPA'}
     ];
 });

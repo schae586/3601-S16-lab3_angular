@@ -12,6 +12,12 @@ img {
     padding: 10px;
 }
 
+#GPAForm {
+    margin: auto;
+    width: 100%;
+    padding: 10px;
+}
+
 #footer-insides {
     margin: auto;
     width: 30%;
