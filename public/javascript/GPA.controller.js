@@ -6,6 +6,8 @@ angular.module('stdControllers').controller('GPACtrl', function(){
     GPACtrl.gradeField = "";
     GPACtrl.creditField = "";
 
+    GPACtrl.currentGPA = 3.0;
+
     var classObject = {
         classname:"",
         grade:"",
@@ -28,6 +30,7 @@ angular.module('stdControllers').controller('GPACtrl', function(){
             GPACtrl.data.push({classname: GPACtrl.textField, grade: GPACtrl.gradeField, credits: GPACtrl.creditField});
             GPACtrl.textField = "";
         }
+
     };
 
     GPACtrl.removeData = function(index){
