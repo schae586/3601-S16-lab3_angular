@@ -1,5 +1,20 @@
+'use strict';
+
 describe('testing basic functions', function(){
     //Tests for GPA Calculator
+
+    // load the controller's module
+    beforeEach(module('mainApp'));
+
+    var GPACtrl, scope;
+
+    // Initialize the controller and mock scope.
+    beforeEach(inject(function($controller, $rootScope) {
+        scope = $rootScope.$new();
+        GPACtrl = $controller('GPACtrl as GPAController', {
+            $scope: scope
+        });
+    }));
 
     it('gradeLetterConverterTest', function(){
         expect(gradeLetterConverter("A")).toEqual(4.00);

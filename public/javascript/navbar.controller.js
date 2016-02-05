@@ -1,5 +1,5 @@
 //====================== NAVBAR CONTROLLER ============================
-angular.module('stdComponents').controller('navbarCtrl', function(){
+angular.module('mainApp').controller('navbarCtrl', function(){
     var navbar = this;
     console.log("Navbar controller loaded");
 
