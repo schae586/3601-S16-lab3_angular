@@ -1,3 +1,15 @@
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
+}
+
+.yellow {
+    color: #ffaa06;
+}
+
 img {
     width: 50%;
     display: block;

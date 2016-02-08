@@ -1,4 +1,4 @@
-angular.module('mainApp').controller('GPACtrl', function(){
+angular.module('stdControllers').controller('GPACtrl', function(){
     var GPACtrl = this;
     console.log("GPA controller loaded.");
 
@@ -21,6 +21,18 @@ angular.module('mainApp').controller('GPACtrl', function(){
     GPACtrl.addData = function(){
         console.log(GPACtrl.textField);
 
+        if (GPACtrl.gradeField != "A" && GPACtrl.gradeField != "A-" && GPACtrl.gradeField != "B+" && GPACtrl.gradeField != "B" && GPACtrl.gradeField != "B-"
+            && GPACtrl.gradeField != "C+" && GPACtrl.gradeField != "C" && GPACtrl.gradeField != "C-" && GPACtrl.gradeField != "D+"
+            && GPACtrl.gradeField != "D" && GPACtrl.gradeField != "D-" && GPACtrl.gradeField != "F") {
+            alert("Please select a valid grade from the drop down menu!");
+            return;
+        }
+
+        if (isNaN(parseInt(GPACtrl.creditField))) {
+            alert("Please enter a valid credit value!");
+            return;
+        }
+
         if(GPACtrl.textField.length < 1 || GPACtrl.gradeField.length < 1 || GPACtrl.creditField.length < 1) {
             alert("Please fill all fields!");
             return;
@@ -33,13 +45,13 @@ angular.module('mainApp').controller('GPACtrl', function(){
             GPACtrl.creditField = "";
         }
 
-        GPACtrl.currentGPA = calcGPA(GPACtrl.data);
+        GPACtrl.currentGPA = GPACtrl.calcGPA(GPACtrl.data);
 
     };
 
     GPACtrl.removeData = function(index){
         GPACtrl.data.splice(index, 1);
-        GPACtrl.currentGPA = calcGPA(GPACtrl.data);
+        GPACtrl.currentGPA = GPACtrl.calcGPA(GPACtrl.data);
     };
 
     GPACtrl.itemsInList = function(){
@@ -77,23 +89,14 @@ angular.module('mainApp').controller('GPACtrl', function(){
 
     }
 
-    GPACtrl.calculateGPA = function(grade1, grade2, grade3){
-        var gradeOne = GPACtrl.gradeLetterConverter(grade1);
-        var gradeTwo = GPACtrl.gradeLetterConverter(grade2);
-        var gradeThree = GPACtrl.gradeLetterConverter(grade3);
-        //return "Grade1 " + gradeOne + "Grade2 " + gradeTwo + "Grade3 " + gradeThree + "Credit1 " + credit1 + "Credit2 " + credit2 + "Credit3 " + credit3;
-        return "Your GPA is " + (((gradeOne * parseInt(credit1)) + (gradeTwo * parseInt(credit2)) + (gradeThree * parseInt(credit3))) / (parseInt(credit1) + parseInt(credit2) + parseInt(credit3))).toFixed(2);
-
-    }
-
-    var calcGPA = function(dataarray) {
+    GPACtrl.calcGPA = function(dataarray) {
         var creditCount = 0;
         var cumGrade = 0;
 
         dataarray.forEach(function(data){
             creditCount += parseInt(data.credits);
             console.log("Credit count: " + creditCount);
-            cumGrade += data.credits * gradeLetterConverter(data.grade);
+            cumGrade += data.credits * GPACtrl.gradeLetterConverter(data.grade);
             console.log("Cumulative grade: " + cumGrade);
         });
         console.log(cumGrade / creditCount);

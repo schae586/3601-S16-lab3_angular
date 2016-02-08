@@ -29,12 +29,31 @@
     <ul class="list-group">
         <li class="list-group-item">
 
+            <datalist id="letterGrades">
+                <option value="A">
+                <option value="A-">
+                <option value="B+">
+                <option value="B">
+                <option value="B-">
+                <option value="C+">
+                <option value="C">
+                <option value="C-">
+                <option value="D+">
+                <option value="D">
+                <option value="D-">
+                <option value="F">
+            </datalist>
+
             <form ng-submit="GPAControl.addData()">
                 <input ng-model="GPAControl.textField" type="text" size="25" placeholder="Add a new class...">
-                <input ng-model="GPAControl.gradeField" type="text" size="25" placeholder="Add class's grade...">
+                <input ng-model="GPAControl.gradeField" list="letterGrades" name="letterGrade1" size="25" placeholder="Add class's grade..."/>
+                <!--<input ng-model="GPAControl.gradeField" type="text" size="25" placeholder="Add class's grade..."> -->
                 <input ng-model="GPAControl.creditField" type="text" size="25" placeholder="Add class's credit count...">
                 <input type="submit" value="submit" class="btn btn-primary">
-                <span class="floatRight">Classes listed: {{GPAControl.itemsInList()}} <br> Current GPA: {{GPAControl.currentGPA}}</span>
+                <span class="floatRight">Classes listed: {{GPAControl.itemsInList()}}
+                <br>
+                <span class="floatRight" ng-class="{red: GPAControl.currentGPA <= 2.0, yellow: GPAControl.currentGPA > 2.0 && GPAControl.currentGPA <= 3.0, green: GPAControl.currentGPA > 3.0}"> Current GPA: {{GPAControl.currentGPA}} </span>
+                </span>
             </form>
 
         </li>
