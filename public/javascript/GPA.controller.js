@@ -46,7 +46,7 @@ angular.module('mainApp').controller('GPACtrl', function(){
         return GPACtrl.data.length;
     };
 
-    var gradeLetterConverter = function(str){
+    GPACtrl.gradeLetterConverter = function(str){
         if (str == "A") {
             return 4.00;
         } else if(str == "A-"){
@@ -77,10 +77,10 @@ angular.module('mainApp').controller('GPACtrl', function(){
 
     }
 
-    var calculateGPA = function(dataarray){
-        var gradeOne = gradeLetterConverter(grade1);
-        var gradeTwo = gradeLetterConverter(grade2);
-        var gradeThree = gradeLetterConverter(grade3);
+    GPACtrl.calculateGPA = function(grade1, grade2, grade3){
+        var gradeOne = GPACtrl.gradeLetterConverter(grade1);
+        var gradeTwo = GPACtrl.gradeLetterConverter(grade2);
+        var gradeThree = GPACtrl.gradeLetterConverter(grade3);
         //return "Grade1 " + gradeOne + "Grade2 " + gradeTwo + "Grade3 " + gradeThree + "Credit1 " + credit1 + "Credit2 " + credit2 + "Credit3 " + credit3;
         return "Your GPA is " + (((gradeOne * parseInt(credit1)) + (gradeTwo * parseInt(credit2)) + (gradeThree * parseInt(credit3))) / (parseInt(credit1) + parseInt(credit2) + parseInt(credit3))).toFixed(2);
 
