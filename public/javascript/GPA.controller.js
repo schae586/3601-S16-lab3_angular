@@ -35,11 +35,11 @@ angular.module('mainApp').controller('GPACtrl', function(){
 
         GPACtrl.currentGPA = calcGPA(GPACtrl.data);
 
-
     };
 
     GPACtrl.removeData = function(index){
         GPACtrl.data.splice(index, 1);
+        GPACtrl.currentGPA = calcGPA(GPACtrl.data);
     };
 
     GPACtrl.itemsInList = function(){
@@ -91,8 +91,10 @@ angular.module('mainApp').controller('GPACtrl', function(){
         var cumGrade = 0;
 
         dataarray.forEach(function(data){
-            creditCount += data.credits;
+            creditCount += parseInt(data.credits);
+            console.log("Credit count: " + creditCount);
             cumGrade += data.credits * gradeLetterConverter(data.grade);
+            console.log("Cumulative grade: " + cumGrade);
         });
         console.log(cumGrade / creditCount);
         return cumGrade / creditCount;
